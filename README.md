@@ -6,8 +6,7 @@ Currently, this project features only a cable simulation. The goal is to develop
 
 ## Current Cable Sim
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/khLnjYnNqBQ" frameborder="0" allowfullscreen></iframe>
-[![link](https://img.youtube.com/vi/khLnjYnNqBQ/0.jpg)](https://www.youtube.com/watch?v=khLnjYnNqBQ)
+link to video: (https://www.youtube.com/watch?v=khLnjYnNqBQ)
 
 ## How to Run
 
