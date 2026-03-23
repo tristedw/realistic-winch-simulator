@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6021948904553117741}
   - component: {fileID: 1960858181217929861}
   m_Layer: 6
-  m_Name: Cable
+  m_Name: Winch Cable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,23 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe86d9b324ba4b40b637058aeaca98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CableSimulator
-  segments: 17
-  cableLength: 1.8
+  segments: 100
+  cableLength: 2
   nodeMass: 0.16
   nodeDrag: 1.16
-  nodeAngularDrag: 10
+  nodeAngularDrag: 10.2
   gravityScale: 1
-  positionSpring: 5000
-  positionDamper: 200
-  angularSpring: 500
-  angularDamper: 100
-  stretchLimit: 0.424
+  positionSpring: 10000
+  positionDamper: 2074
+  angularSpring: 7000
+  angularDamper: 1111
+  stretchLimit: 0.011
   limitContactDistance: 0.0063
-  limitSpring: 223
+  limitSpring: 1185
   limitDamper: 50
   breakForce: Infinity
   breakTorque: Infinity
-  colliderRadius: 0.03
+  colliderRadius: 0.1
   collisionLayers:
     serializedVersion: 2
     m_Bits: 4294967295

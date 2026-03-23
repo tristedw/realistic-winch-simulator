@@ -14,25 +14,25 @@ public class CableSimulator : MonoBehaviour
     public float nodeMass = 0.05f;
 
     [Tooltip("Linear drag on each node. Higher values slow down swinging.")]
-    [Range(0f, 10f)] public float nodeDrag = 0.5f;
+    public float nodeDrag = 0.5f;
 
     [Tooltip("Angular drag on each node. Higher values damp twisting.")]
-    [Range(0f, 20f)] public float nodeAngularDrag = 5f;
+    public float nodeAngularDrag = 5f;
 
     [Range(-2f, 2f)] public float gravityScale = 1f;
 
     [Header("Joint Stiffness")]
     [Tooltip("Spring force resisting positional deviation from rest length. ")]
-    [Range(0f, 5000f)] public float positionSpring = 800f;
+    [Range(0f, 50000f)] public float positionSpring = 800f;
 
     [Tooltip("Damping on the linear spring. Higher reduces oscillation.")]
-    [Range(0f, 200f)] public float positionDamper = 40f;
+    [Range(0f, 20000f)] public float positionDamper = 40f;
 
     [Tooltip("Spring force resisting angular deviation. Higher = stiffer bends.")]
-    [Range(0f, 500f)] public float angularSpring = 100f;
+    [Range(0f, 50000f)] public float angularSpring = 100f;
 
     [Tooltip("Damping on the angular spring. Higher reduces wobble.")]
-    [Range(0f, 100f)] public float angularDamper = 10f;
+    [Range(0f, 10000f)] public float angularDamper = 10f;
 
     [Header("Stretch & Stiffness")]
     [Tooltip("Hard maximum stretch per segment as a fraction of segment length. " +
@@ -183,6 +183,7 @@ public class CableSimulator : MonoBehaviour
             rb.linearDamping = nodeDrag;
             rb.angularDamping = nodeAngularDrag;
             rb.interpolation = RigidbodyInterpolation.Interpolate;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             rb.useGravity = true;
 
             if (i < count - 1)
