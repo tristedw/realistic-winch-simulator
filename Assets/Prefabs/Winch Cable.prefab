@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CableMeshBuilder
   radialSegments: 8
-  radius: 0.1
+  radius: 0.004765
 --- !u!114 &1080102946059428338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,28 +151,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe86d9b324ba4b40b637058aeaca98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CableSimulator
-  segments: 100
-  cableLength: 2
-  nodeMass: 0.16
-  nodeDrag: 1.16
-  nodeAngularDrag: 10.2
+  rope: {fileID: 11400000, guid: 076e77bd0573c44b58c874fafe5f5f7b, type: 2}
+  segmentLengthInDiameters: 28
+  minNodes: 5
+  maxNodes: 56
+  cableLength: 8.605769
+  nodeSolverIterations: 40
+  nodeSolverVelocityIterations: 20
+  useJointProjection: 1
+  maxSolverMassRatio: 60
+  jointPatchThreshold: 0.03
+  stiffnessScale: 0.003
+  stretchLimit: 0.008
+  limitSpring: 0
+  limitDamper: 0
+  limitContactDistance: 0.002
+  useAerodynamicDrag: 1
+  airDensity: 1.225
+  baseLinearDamping: 0.05
+  baseAngularDamping: 2
   gravityScale: 1
-  positionSpring: 10000
-  positionDamper: 2074
-  angularSpring: 7000
-  angularDamper: 1111
-  stretchLimit: 0.011
-  limitContactDistance: 0.0063
-  limitSpring: 1185
-  limitDamper: 50
-  breakForce: Infinity
-  breakTorque: Infinity
-  colliderRadius: 0.1
+  simulateRopeFailure: 1
+  breakMargin: 1
+  tensionSmoothing: 0.03
+  overloadDuration: 0.15
+  selfCollision: 0
   collisionLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   startAnchor: {fileID: 0}
   endAnchor: {fileID: 0}
+  loadCarryingEnds: 0
 --- !u!114 &1960858181217929861
 MonoBehaviour:
   m_ObjectHideFlags: 0

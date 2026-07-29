@@ -119,6 +119,21 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!115 &95969411
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 7
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_Type: 0
+  m_ExecutionOrder: 0
+  m_ClassName: WinchController
+  m_Namespace: 
+  m_AssemblyName: 6rswv5w2
 --- !u!1 &151264080
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +601,204 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &316324105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 316324110}
+  - component: {fileID: 316324109}
+  - component: {fileID: 316324108}
+  - component: {fileID: 316324107}
+  - component: {fileID: 316324106}
+  m_Layer: 0
+  m_Name: __t2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &316324106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316324105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 95969411}
+  m_Name: 
+  m_EditorClassIdentifier: 6rswv5w2::WinchController
+  drum: {fileID: 0}
+  motor: {fileID: 0}
+  brake: {fileID: 0}
+  rope: {fileID: 0}
+  tether: {fileID: 0}
+  minimumFreeLength: 0.35
+  drumVisual: {fileID: 0}
+  drumSpinAxis: {x: 0, y: 0, z: 1}
+  allowFreespool: 1
+  freespoolDrag: 0.12
+  stopAtFullRetract: 1
+  enforceMinimumWraps: 1
+  inputActions: {fileID: 0}
+  actionMapName: Winch
+  moveActionName: Move
+  freespoolActionName: Freespool
+  useKeyboardFallback: 1
+  externalControl: 0
+  <DrumOmega>k__BackingField: 0
+  <DrumAngle>k__BackingField: 0
+  <State>k__BackingField: 0
+  <ClutchEngaged>k__BackingField: 1
+  <RopeTension>k__BackingField: 0
+  _moveAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dfad6737-3580-483e-a696-177cf0c1cee9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _freespoolAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6c1fa3d6-9985-4cc7-baaf-9e7abc6084d6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _duty: 0
+  _motorTorque: 0
+  _brakeTorque: 0
+  _loadTorque: 0
+  _frictionTorque: 0
+  _inertia: 0
+--- !u!114 &316324107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316324105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1919877160}
+  m_Name: 
+  m_EditorClassIdentifier: 6rswv5w2::WinchBrake
+  holdingTorque: 1750
+  dynamicFraction: 0.72
+  oneWayHoldsPayoutOnly: 1
+  releaseTime: 0.12
+  engageTime: 0.18
+  thermalMass: 900
+  coolingCoefficient: 2.2
+  ambientTemperature: 20
+  fadeStartTemp: 150
+  fadeEndTemp: 320
+  residualFraction: 0.25
+  <Engagement>k__BackingField: 1
+  <Temperature>k__BackingField: 0
+  <IsSlipping>k__BackingField: 0
+  <AppliedTorque>k__BackingField: 0
+--- !u!114 &316324108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316324105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1718357276}
+  m_Name: 
+  m_EditorClassIdentifier: 6rswv5w2::WinchDrum
+  rope: {fileID: 0}
+  barrelRadius: 0.0318
+  drumWidth: 0.2286
+  totalRopeLength: 25.9
+  minimumWrapsOnDrum: 5
+  bareDrumInertia: 0.006
+  ropeExitPoint: {fileID: 0}
+  fairlead: {fileID: 0}
+  <DeployedLength>k__BackingField: 0
+  <Revolutions>k__BackingField: 0
+  _geomValid: 0
+  _cLayer: 0
+  _cRadius: 0
+  _cInertia: 0
+--- !u!114 &316324109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316324105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 557445673}
+  m_Name: 
+  m_EditorClassIdentifier: 6rswv5w2::WinchMotor
+  nominalVoltage: 12.8
+  motorResistance: 0.0109
+  supplyResistance: 0.002
+  fluxConstant: 0.00036
+  saturationCurrent: 110
+  maxCurrent: 420
+  gearRatio: 156
+  gearEfficiency: 0.9
+  armatureInertia: 0.00006
+  coulombFriction: 135
+  viscousFriction: 3
+  loadDependentFriction: 0
+  thermalMass: 4200
+  coolingCoefficient: 5.5
+  ambientTemperature: 20
+  derateStartTemp: 120
+  thermalCutoffTemp: 180
+  <Temperature>k__BackingField: 0
+  <Current>k__BackingField: 0
+  <TerminalVoltage>k__BackingField: 0
+  <ShaftTorque>k__BackingField: 0
+  <ElectricalPower>k__BackingField: 0
+  <MechanicalPower>k__BackingField: 0
+  <ThermalCutout>k__BackingField: 0
+--- !u!4 &316324110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316324105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!115 &557445673
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 7
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_Type: 0
+  m_ExecutionOrder: 0
+  m_ClassName: WinchMotor
+  m_Namespace: 
+  m_AssemblyName: 6rswv5w2
 --- !u!1 &685918534
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,12 +825,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685918534}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0162, y: -0.0057, z: -0}
-  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17020655, y: 0, z: 0.05988741}
+  m_LocalScale: {x: 0.105065666, y: 0.105065666, z: 0.105065666}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 995964867}
+  m_Father: {fileID: 543450653479497918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &685918536
 MeshRenderer:
@@ -685,6 +898,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 543450653479497918}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10.506567
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10.506567
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10.506567
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -733,7 +958,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 685918535}
+      addedObject: {fileID: 1398620778}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb7e83c0ecba9eb4590358d825283132, type: 3}
 --- !u!4 &995964867 stripped
@@ -770,11 +995,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035743252}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.71, y: 0.75, z: 1.387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6, y: 0.5, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2062117450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1035743254
@@ -785,7 +1011,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035743252}
   serializedVersion: 5
-  m_Mass: 50
+  m_Mass: 1200
   m_LinearDamping: 0.05
   m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -811,7 +1037,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035743252}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8cfcb6289ed834af3876c082b2e9af49, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -902,6 +1128,119 @@ MonoBehaviour:
   OnDisconnected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1398620777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398620778}
+  - component: {fileID: 1398620781}
+  - component: {fileID: 1398620780}
+  - component: {fileID: 1398620779}
+  m_Layer: 0
+  m_Name: DrumRopeWrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1398620778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398620777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 995964867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1398620779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398620777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b14b942dd704d6cbc065a76d6c2bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchDrumRopeVisual
+  drum: {fileID: 3469287837463379748}
+  drumBody: {fileID: 1398620778}
+  spinAxis: {x: 0, y: 0, z: 1}
+  visualBarrelRadius: 0.0801
+  visualDrumWidth: 0
+  radialSegments: 6
+  pointsPerWrap: 12
+  maxWraps: 400
+  ropeMaterial: {fileID: 2100000, guid: b3852e4506e3d474f8f6040efa04d46a, type: 2}
+  driveExitPoint: 1
+--- !u!23 &1398620780
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398620777}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b3852e4506e3d474f8f6040efa04d46a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1398620781
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398620777}
+  m_Mesh: {fileID: 0}
 --- !u!1 &1542843201
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +1275,7 @@ MonoBehaviour:
   - {fileID: 1035743258}
   - {fileID: 2109937962}
   startAnchor: {fileID: 685918535}
-  endAnchor: {fileID: 0}
+  endAnchor: {fileID: 2062117450}
   spawnCableOnStart: 1
 --- !u!4 &1542843203
 Transform:
@@ -952,6 +1291,67 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!115 &1718357276
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 7
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_Type: 0
+  m_ExecutionOrder: 0
+  m_ClassName: WinchDrum
+  m_Namespace: 
+  m_AssemblyName: 6rswv5w2
+--- !u!115 &1919877160
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 7
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_Type: 0
+  m_ExecutionOrder: 0
+  m_ClassName: WinchBrake
+  m_Namespace: 
+  m_AssemblyName: 6rswv5w2
+--- !u!1 &2062117449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062117450}
+  m_Layer: 0
+  m_Name: LoadAttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062117450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062117449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1035743253}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109937961
 GameObject:
@@ -1015,11 +1415,12 @@ Transform:
   m_GameObject: {fileID: 919132149274716676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.34, y: 1.51, z: 1.22}
+  m_LocalPosition: {x: -2.34, y: 0.62, z: 1.22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 995964867}
+  - {fileID: 685918535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919132149274716676
@@ -1038,6 +1439,11 @@ GameObject:
   - component: {fileID: 3469287837463379740}
   - component: {fileID: 3469287837463379744}
   - component: {fileID: 3469287837463379743}
+  - component: {fileID: 3469287837463379748}
+  - component: {fileID: 3469287837463379747}
+  - component: {fileID: 3469287837463379746}
+  - component: {fileID: 3469287837463379745}
+  - component: {fileID: 3469287837463379749}
   m_Layer: 0
   m_Name: Winch
   m_TagString: Untagged
@@ -1121,8 +1527,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.58
-  m_Height: 10.82
+  m_Radius: 0.16600376
+  m_Height: 1.1368104
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3469287837463379741
@@ -1164,12 +1570,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74707df0af6cb84a9a0cc6dade752de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinchController
-  rotationSpeed: 100
-  rotationAxis: {x: 0, y: 0, z: 1}
-  winchRigidbody: {fileID: 3469287837463379741}
+  drum: {fileID: 3469287837463379748}
+  motor: {fileID: 3469287837463379747}
+  brake: {fileID: 3469287837463379746}
+  rope: {fileID: 0}
+  tether: {fileID: 3469287837463379749}
+  minimumFreeLength: 0.3
+  drumVisual: {fileID: 995964867}
+  drumSpinAxis: {x: 0, y: 0, z: 1}
+  allowFreespool: 1
+  freespoolDrag: 0.12
+  stopAtFullRetract: 1
+  enforceMinimumWraps: 1
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   actionMapName: Winch
   moveActionName: Move
+  freespoolActionName: Freespool
+  useKeyboardFallback: 1
+  externalControl: 0
 --- !u!65 &3469287837463379743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1189,8 +1607,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.91, y: 4.9, z: 1}
-  m_Center: {x: 0, y: 0, z: 4.29}
+  m_Size: {x: 0.5158724, y: 0.51482177, z: 0.105065666}
+  m_Center: {x: 0, y: 0, z: 0.4507317}
 --- !u!65 &3469287837463379744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1210,8 +1628,126 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.91, y: 4.9, z: 1}
-  m_Center: {x: 0, y: 0, z: -4.29}
+  m_Size: {x: 0.5158724, y: 0.51482177, z: 0.105065666}
+  m_Center: {x: 0, y: 0, z: -0.4507317}
+--- !u!114 &3469287837463379745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149274716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1384d94c41c54c27bb57a7042b23785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchTelemetryHUD
+  winch: {fileID: 3469287837463379742}
+  rope: {fileID: 0}
+  show: 1
+  toggleKey: 94
+  imperialUnits: 1
+  origin: {x: 12, y: 12}
+  width: 330
+  fontSize: 12
+--- !u!114 &3469287837463379746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149274716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf5ac2f588bf4626b91a998c37bbc9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchBrake
+  holdingTorque: 1750
+  dynamicFraction: 0.72
+  oneWayHoldsPayoutOnly: 1
+  releaseTime: 0.12
+  engageTime: 0.18
+  powerOutEngagement: 0.9
+  thermalMass: 900
+  coolingCoefficient: 2.2
+  ambientTemperature: 20
+  fadeStartTemp: 150
+  fadeEndTemp: 320
+  residualFraction: 0.25
+--- !u!114 &3469287837463379747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149274716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa367c829fc9470b98db0b39b71ae89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchMotor
+  nominalVoltage: 12.8
+  motorResistance: 0.0109
+  supplyResistance: 0.002
+  fluxConstant: 0.00036
+  saturationCurrent: 110
+  maxCurrent: 420
+  gearRatio: 156
+  gearEfficiency: 0.9
+  armatureInertia: 0.00006
+  maxArmatureRpm: 10000
+  coulombFriction: 135
+  viscousFriction: 3
+  loadDependentFriction: 0.08
+  thermalMass: 4200
+  coolingCoefficient: 5.5
+  ambientTemperature: 20
+  derateStartTemp: 120
+  thermalCutoffTemp: 180
+--- !u!114 &3469287837463379748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149274716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d72a4ad0bf1487c92b357173878f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchDrum
+  rope: {fileID: 11400000, guid: 076e77bd0573c44b58c874fafe5f5f7b, type: 2}
+  barrelRadius: 0.03175
+  drumWidth: 0.2223
+  totalRopeLength: 30.48
+  minimumWrapsOnDrum: 5
+  bareDrumInertia: 0.0055
+  ropeExitPoint: {fileID: 685918535}
+  fairlead: {fileID: 0}
+--- !u!114 &3469287837463379749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149274716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3a6bd586a5d4f47bd0568ca78f34ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinchRopeTether
+  ropeExit: {fileID: 685918535}
+  loadAttachment: {fileID: 2062117450}
+  load: {fileID: 1035743254}
+  rope: {fileID: 11400000, guid: 076e77bd0573c44b58c874fafe5f5f7b, type: 2}
+  freeLength: 4
+  stiffnessScale: 1
+  maxStepPhase: 0.15
+  dampingRatio: 0.7
+  tensionClamp: 1.5
+  applyForceToLoad: 1
+  applyForceToWinch: 0
+  winchBody: {fileID: 3469287837463379741}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1223,3 +1759,4 @@ SceneRoots:
   - {fileID: 2109937963}
   - {fileID: 270503456}
   - {fileID: 543450653479497918}
+  - {fileID: 316324110}

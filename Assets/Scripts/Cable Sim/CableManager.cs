@@ -35,14 +35,20 @@ public class CableManager : MonoBehaviour
         {
             if (cable == null) continue;
 
-            Rigidbody startNode = cable.GetNode(0);
-            Rigidbody endNode   = cable.GetNode(cable.NodeCount - 1);
+            // Only ends that are actually free are offered to sockets. An end
+            // held by startAnchor/endAnchor is already attached to something, and
+            // snapping it again means a joint fighting the anchor tracker.
+            Rigidbody startNode = cable.startAnchor == null ? cable.GetNode(0) : null;
+            Rigidbody endNode   = cable.endAnchor == null
+                                ? cable.GetNode(cable.NodeCount - 1) : null;
+
+            if (startNode == null && endNode == null) continue;
 
             foreach (var socket in sockets)
             {
                 if (socket == null || socket.ConnectedNode != null) continue;
-                socket.TrySnap(startNode);
-                socket.TrySnap(endNode);
+                if (startNode != null) socket.TrySnap(startNode);
+                if (endNode != null) socket.TrySnap(endNode);
             }
         }
     }
